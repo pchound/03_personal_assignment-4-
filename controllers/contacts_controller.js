@@ -46,4 +46,4 @@ async function saveContact(request,response)
     response.end(JSON.stringify(contact), "utf-8");
 };
 
-module.exports={contacts, contactsId};
+module.exports={contacts, contactsId, saveContact};
