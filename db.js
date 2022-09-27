@@ -13,7 +13,7 @@ try
             }
             else
             {
-                client.db("sample_airbnb").collection('contacts').insertMany([
+                /*client.db("sample_airbnb").collection('contacts').insertMany([
                     {
                         firstName: "Belle",
                         lastName: "Garner",
@@ -35,7 +35,8 @@ try
                         favoriteColor: "periwinkle",
                         birthday: 01-19-1961
                     },
-                ])
+                ])*/
+                console.log('Success!');
             }
         })
 
