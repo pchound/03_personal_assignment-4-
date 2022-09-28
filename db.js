@@ -3,6 +3,11 @@ const {MongoClient} = require ('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.q4bub0t.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 console.log(uri);
+
+
+
+
+
 try 
     {
         // Connect to the MongoDB cluster

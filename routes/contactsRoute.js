@@ -4,6 +4,8 @@ const contacts_controller = require('../controllers/contacts_controller');
 const client = require('../db.js').client;
 const router = express.Router();
 
+//router.use('/', require('/.swagger'));
+
 
 //GET
 router.get('/contacts', contacts_controller.getAllContacts);
