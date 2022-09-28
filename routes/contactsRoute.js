@@ -7,10 +7,8 @@ const router = express.Router();
 //router.use('/', require('/.swagger'));
 
 
-//GET
 router.get('/contacts', contacts_controller.getAllContacts);
-
-
+router.get('/contacts/:id', contacts_controller.getContactById);
 router.post('/contacts', contacts_controller.createContact);
 router.put('/contacts/:id', contacts_controller.updateContactById);
 router.delete('/contacts/:id', contacts_controller.deleteContactById);

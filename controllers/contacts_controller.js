@@ -52,7 +52,15 @@ async function getAllContacts(req, res) {
     } catch (error) {
         return res.status(500).json({message:'Server Error'});
     }
+};
 
+async function getContactById(req, res) {
+    try {
+        const contacts = await client.db('sample_airbnb').collection('contacts').find({_id:new ObjectId(req.params.id)}).toArray();
+        res.status(200).json(contacts[0]);
+    } catch (error) {
+        return res.status(500).json({message:'Server Error'});
+    }
 }
 
 async function createContact(req, res) {
@@ -81,7 +89,7 @@ async function updateContactById(req,res){
             birthday: req.body.birthday
         };
         const response = await client.db('sample_airbnb').collection('contacts').findOneAndUpdate({_id:new ObjectId(req.params.id)},{$set:contact});
-        res.status(200).json(response);
+        res.status(200).json({message: 'Successfully updated contact'});
 
     } catch (error) {
         return res.status(500).json({message:'Server Error'});
@@ -99,4 +107,4 @@ async function deleteContactById(req,res){
     }
 
 }
-module.exports = { contacts, contactsId, saveContact, getAllContacts, createContact, updateContactById, deleteContactById};
+module.exports = { contacts, contactsId, saveContact, getAllContacts, getContactById, createContact, updateContactById, deleteContactById};
